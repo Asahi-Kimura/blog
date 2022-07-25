@@ -45,7 +45,7 @@
                 @endforeach
             </tbody>
         </table>
-    </main>
+        <p>新規記事の作成</p>
 
     
     <footer></footer>
