@@ -21,4 +21,8 @@ use App\Http\Controllers\BlogController;
 Route::get('/', [BlogController::class,'index']
 )->name('index');
 
+Route::get('/blog/{id}', [BlogController::class,'showDetail']
+)->name('showDetail');
+
+
 

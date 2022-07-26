@@ -23,34 +23,11 @@
       
     </header>
     <main>
-      <h1>ブログ記事一覧</h1>
-      @if (session()->has('err'))
-        <p>{{session('err')}}</p> 
-      @endif
-        <table class="table table-dark table-striped">
-            <thead>
-                <tr>
-                    <th>記事番号</th>
-                    <th>タイトル</th>
-                    {{-- <th>内容</th> --}}
-                    <th>更新日時</th>
-                </tr>
-            </thead>
-          
-            <tbody>
-                @foreach ($blogs as $blog)
-                <tr>
-                    <td>{{$blog->id}}</td>
-                    <td> <a href="blog/{{$blog->id}}">{{$blog->title}}</a></td>
-                    {{-- <td> {{$blog->content}}</td> --}}
-                    <td> {{$blog->updated_at}}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+      {{-- <h1>タイトル</h1> --}}
+      <h1>{{$blog -> title}}</h1>
+      <br>
+      <p>{{$blog -> content}}</p>
     </main>
-
-    
     <footer></footer>
 
 

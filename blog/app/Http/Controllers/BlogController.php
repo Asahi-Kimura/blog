@@ -12,4 +12,16 @@ class BlogController extends Controller
         // dd($blogs);
         return view('blogs',['blogs'=> $blogs]);
     }
+
+    public function showDetail($id){
+        
+        $blog = Blog::find($id);
+        // dd($blog);
+        if(is_null($blog)){
+            session()->flash('err','データがありません');
+            return redirect(route('index'));
+        }
+        
+        return view('showDetail',['blog'=> $blog]);
+    }
 }
