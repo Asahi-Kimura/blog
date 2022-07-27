@@ -13,7 +13,7 @@ class BlogController extends Controller
         return view('blogs',['blogs'=> $blogs]);
     }
 
-    public function showDetail($id){
+    public function blogDetail($id){
         
         $blog = Blog::find($id);
         // dd($blog);
@@ -22,6 +22,22 @@ class BlogController extends Controller
             return redirect(route('index'));
         }
         
-        return view('showDetail',['blog'=> $blog]);
+        return view('blogDetail',['blog'=> $blog]);
     }
+
+    public function blogCreate(){
+        return view('blogCreate');
+    }
+    public function blogsStore($id){
+        
+        $blog = Blog::find($id);
+        // dd($blog);
+        if(is_null($blog)){
+            session()->flash('err','データがありません');
+            return redirect(route('index'));
+        }
+        
+        return view('blogDetail',['blog'=> $blog]);
+    }
+
 }

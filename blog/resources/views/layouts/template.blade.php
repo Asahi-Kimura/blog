@@ -8,26 +8,25 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>ブログ</title>
+    <title>@yield('headline')</title>
   </head>
   <body>
 
     <header>
       <div class="p-3 mb-2 bg-primary text-white">
         <div class="d-flex justify-content-between">
-          <div>ブログ</div>
+          <div>テストブログ</div>
           <button type="button" class="btn btn-dark">menue</button>
         </div>
       </div>
-    
-      
     </header>
+
     <main>
-      {{-- <h1>タイトル</h1> --}}
-      <h1>{{$blog -> title}}</h1>
-      <br>
-      <p>{{$blog -> content}}</p>
+      <h1>@yield('headline')</h1>
+      @yield('content')
     </main>
+
+    
     <footer></footer>
 
 

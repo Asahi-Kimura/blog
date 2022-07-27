@@ -20,9 +20,19 @@ use App\Http\Controllers\BlogController;
 //一覧画面表示
 Route::get('/', [BlogController::class,'index']
 )->name('index');
+//ブログ入力フォーム
+Route::get('/blog/create', [BlogController::class,'blogCreate']
+)->name('blogCreate');
+//ブログ詳細
+Route::get('/blog/{id}', [BlogController::class,'blogDetail']
+)->name('blogDetail');
 
-Route::get('/blog/{id}', [BlogController::class,'showDetail']
-)->name('showDetail');
+//新規登録一覧
+Route::post('/blog/store', [BlogController::class,'blogStore']
+)->name('blogStore');
+
+
+
 
 
 
