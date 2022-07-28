@@ -14,8 +14,8 @@ class BlogFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this-> faker ->word(),
-            'content' => $this->faker -> realText()
+            'title' => $this-> faker ->name(),
+            'content' => $this->faker -> sentence()
         ];
     }
 }

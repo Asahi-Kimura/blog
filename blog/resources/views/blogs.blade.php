@@ -25,24 +25,8 @@
                 @endforeach
             </tbody>
         </table>
-<<<<<<< HEAD:blog/resources/views/blogs.blade copy.php
-        <p>新規記事の作成</p>
-
-    
-    <footer></footer>
-
-
-  
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    
-  </body>
-</html>
-=======
-        <a href="{{route('blogCreate')}}">
+        <a href="/blog/create">
             <button type="button" class="btn btn-dark" >新規ブログ投稿</button>
         </a>
         
  @endsection
->>>>>>> 7ba35ad97e4c65551361b75debb1034e9f2652bb:blog/resources/views/blogs.blade.php
