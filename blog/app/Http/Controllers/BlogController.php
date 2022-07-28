@@ -12,4 +12,32 @@ class BlogController extends Controller
         // dd($blogs);
         return view('blogs',['blogs'=> $blogs]);
     }
+
+    public function blogDetail($id){
+        
+        $blog = Blog::find($id);
+        // dd($blog);
+        if(is_null($blog)){
+            session()->flash('err','データがありません');
+            return redirect(route('index'));
+        }
+        
+        return view('blogDetail',['blog'=> $blog]);
+    }
+
+    public function blogCreate(){
+        return view('blogCreate');
+    }
+    public function blogsStore($id){
+        
+        $blog = Blog::find($id);
+        // dd($blog);
+        if(is_null($blog)){
+            session()->flash('err','データがありません');
+            return redirect(route('index'));
+        }
+        
+        return view('blogDetail',['blog'=> $blog]);
+    }
+
 }
