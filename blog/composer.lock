@@ -1610,7 +1610,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "ff6248ea87a9f116e78edd6002e39e5128a0d4dd"
+                "reference": "ff6248ea87a9f116e78edd6002e39e5128a0d4"
             },
             "dist": {
                 "type": "zip",

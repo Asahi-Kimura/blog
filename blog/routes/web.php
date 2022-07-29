@@ -23,14 +23,15 @@ Route::get('/', [BlogController::class,'index']
 //ブログ入力フォーム
 Route::get('/blog/create', [BlogController::class,'blogCreate']
 )->name('blogCreate');
+//ブログ編集
+Route::get('/blog/edit/{id?}', [BlogController::class,'blogEdit']
+)->name('blogEdit');
 //ブログ詳細
-Route::get('/blog/{id}', [BlogController::class,'blogDetail']
+Route::get('/blog/{id?}', [BlogController::class,'blogDetail']
 )->name('blogDetail');
-
 //新規登録一覧
 Route::post('/blog/store', [BlogController::class,'blogStore']
 )->name('blogStore');
-
 
 
 

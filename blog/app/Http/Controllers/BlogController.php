@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\BlogRequest;
 use App\Models\Blog;
+use Illuminate\Support\Facades\DB; 
 
 class BlogController extends Controller
 {
     public function index(){
         $blogs = Blog::all();
         // dd($blogs);
-        return view('blogs',['blogs'=> $blogs]);
+        return view('blog',['blogs'=> $blogs]);
     }
 
     public function blogDetail($id){
@@ -29,12 +30,17 @@ class BlogController extends Controller
         return view('blogCreate');
     }
 
-    public function blogStore(Request $request){
-        $attributes = $request->all();
-        dd($attributes);
-        // $attributes->save();
+    public function blogStore(BlogRequest $request){
+        $data = $request->all();
 
+        $blog = new Blog();
+        $blog->fill($data)->save();
         //一覧表示画面にリダイレクト
-        return redirect(route('blogCreate'));
+        return redirect(route('index'));
+    }
+    public function blogEdit($id){
+        $blogData = Blog::find($id);
+        dd($blogData);
+        return view('blogEdit',['blogsData'=>$blogData]);
     }
 }

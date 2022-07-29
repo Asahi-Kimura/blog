@@ -15,7 +15,7 @@
     <header>
       <div class="p-3 mb-2 bg-primary text-white">
         <div class="d-flex justify-content-between">
-          <div>テストブログ</div>
+          <div class="btn btn-dark"><a href="{{route('index')}}">テストブログ</a></div>
           <button type="button" class="btn btn-dark">menue</button>
         </div>
       </div>
