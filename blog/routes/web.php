@@ -32,6 +32,9 @@ Route::get('/blog/{id?}', [BlogController::class,'blogDetail']
 //新規登録一覧
 Route::post('/blog/store', [BlogController::class,'blogStore']
 )->name('blogStore');
+//ブログ削除
+Route::get('/blog/delete/{id?}',[BlogController::class,'blogDelete'])
+->name('blogDelete');
 
 
 

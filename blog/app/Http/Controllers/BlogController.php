@@ -40,7 +40,15 @@ class BlogController extends Controller
     }
     public function blogEdit($id){
         $blogData = Blog::find($id);
-        dd($blogData);
-        return view('blogEdit',['blogsData'=>$blogData]);
+        // dd($blogData);
+        return view('blogEdit',['blogData'=>$blogData]);
+    }
+
+    public function blogDelete($id){
+        $blogDel = Blog::find($id);
+
+        // dd($blogDel);
+        $blogDel->destroy($id);
+        return redirect(route('index'));
     }
 }
