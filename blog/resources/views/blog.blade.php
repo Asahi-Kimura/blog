@@ -11,6 +11,7 @@
                     <th>タイトル</th>
                     {{-- <th>内容</th> --}}
                     <th>更新日時</th>
+                    <th>編集</th>
                 </tr>
             </thead>
           
@@ -21,12 +22,23 @@
                     <td> <a href="blog/{{$blog->id}}">{{$blog->title}}</a></td>
                     {{-- <td> {{$blog->content}}</td> --}}
                     <td> {{$blog->updated_at}}</td>
+                    <td> <a href="{{route('blogEdit', $blog->id )}}"><button type="button" class="btn btn-primary">編集</button></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-        <a href="/blog/create">
+    <footer></footer>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
+
+        <a href="{{route('blogCreate')}}">
             <button type="button" class="btn btn-dark" >新規ブログ投稿</button>
         </a>
         
  @endsection
+
